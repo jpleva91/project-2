@@ -2,29 +2,40 @@
 <html>
   <head>
     <title>Urban Poet</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/styles/style.css">
   </head>
   <body>
-    <h1>Urban Poet</h1>
-    <iframe width="100%" height="150" scrolling="no" frameborder="no"></iframe>
-    <h2>Freestyle Lyrics</h2>
-    <section id="lyrics">
-      Finally got a piece of the profit<br>
-      Wine and cheese in the seat by the cockpit<br>
-      I ain't mean for your bitch to be watching<br>
-      Eyeing me, she kept eyeing me<br>
-      Everyday we just making deep profits<br>
-      Money long, I'm gonna need some deep pockets<br>
-      Hands are to the ceiling when I'm in the building<br>
-      How you make a living? Hmm<br>
-      Lately never chillin', mind is on a million<br>
-      Things I gotta do
-    </section>
-      <br>
-    <div>
-      <button class="isaiah">Listen to Isaiah Rashad's The Race Freestyle</button>
-      <button class="joey">Listen to Joey Badass' Mask Off Freestyle</button>
+    <div class="container">
+      <h1>Urban Poet</h1>
+      <iframe width="100%" height="150" scrolling="no" frameborder="no"></iframe>
+      <h2>Freestyle Lyrics</h2>
+      <section id="lyrics">
+        Finally got a piece of the profit<br>
+        Wine and cheese in the seat by the cockpit<br>
+        I ain't mean for your bitch to be watching<br>
+        Eyeing me, she kept eyeing me<br>
+        Everyday we just making deep profits<br>
+        Money long, I'm gonna need some deep pockets<br>
+        Hands are to the ceiling when I'm in the building<br>
+        How you make a living? Hmm<br>
+        Lately never chillin', mind is on a million<br>
+        Things I gotta do
+      </section>
+        <br>
+      <div>
+        <button type="button" class="isaiah btn btn-warning">Listen to Isaiah Rashad's The Race Freestyle</button>
+        <button type="button" class="joey btn btn-secondary">Listen to Joey Badass' Mask Off Freestyle</button>
+      </div>
+      <div>
+        <form class="form-group">
+          <label for="comment-box">Post a Comment</label>
+          <textarea class="form-control" id="comment-box">Type Here</textarea>
+          <button type="submit" class="btn btn-primary btn-large">Post Commment</button>
+        </form>
+      </div>
     </div>
+    <script src="https://genius.codes"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="/scripts/app.js"></script>
   </body>

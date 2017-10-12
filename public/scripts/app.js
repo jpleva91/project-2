@@ -18,5 +18,4 @@ $('document').ready(function(){
 		$('iframe').attr('src', src + joeyMaskOff);
 		$('#lyrics').html(maskOffLyrics);
 	});
-
 });

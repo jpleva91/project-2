@@ -1,6 +1,17 @@
 body {
-	background-color: gray;
+	background-image: url('../images/blur.jpg');
+	background-size: 100%;
 	color: white;
 	font-family: 'Helvetica';
 	text-shadow: 2px 2px black;
+}
+
+#lyrics {
+	background-color: rgba(0, 0, 0, .5);
+	padding-top: 8px;
+	text-align: center;
+}
+
+.form-group {
+	padding-top: 12px;
 }
