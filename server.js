@@ -5,7 +5,7 @@ const express = require('express'),
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
-//var db = require('./models');
+var db = require('./models');
 
 app.use(express.static('public'));
 
