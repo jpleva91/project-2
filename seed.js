@@ -1,13 +1,18 @@
 var db = require("./models/index");
 
-var artists_list = [
-	{},
-	{}
+var songs_list = [
+	{
+	title: "Man of the Year",
+	artist: "Logic",
+	lyrics: "Test lyrics",
+	soundCloudId: "91168184"
+	}
 ];
 
-var songs_list = [
-	{},
-	{}
+var artists_list = [
+	{
+		name: "Logic"
+	}
 ];
 
 db.Artist.remove({}, function(err, artists) {
@@ -21,6 +26,30 @@ db.Artist.remove({}, function(err, artists) {
 		console.log("created", artists.length, "artists");
 
 
-		db.Song.remove({});
+		db.Song.remove({}, function(err, songs) {
+			console.log("removed all songs");
+			songs_list.forEach(function (songData) {
+				var song = new db.Song({
+					title: songData.title,
+					lyrics: songData.lyrics,
+					soundCloudId: songData.soundCloudId
+				});
+				db.Artist.findOne({name: songData.artist}, function (err, foundArtist) {
+					console.log("found artist " + foundArtist.name + " for song " + song.title);
+					if (err) {
+						console.log(err);
+						return;
+					}
+					song.artist = foundArtist;
+					song.save(function(err, savedSong) {
+						if (err) {
+							return console.log(err);
+						}
+						console.log("saved " + savedSong.title + " by " + foundArtist.name);
+					});
+				});
+			});
+		});
+	
 	});
 });

@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let SongSchema = new Schema({
-	artistId: String,
 	title: String,
+	artist: {type: Schema.Types.ObjectId, ref: 'Artist'},
 	lyrics: String,
 	soundCloudId: String
 });
