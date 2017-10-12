@@ -8,10 +8,29 @@ body {
 
 #lyrics {
 	background-color: rgba(0, 0, 0, .5);
-	padding-top: 8px;
+	border-radius: 5px;
+	padding-top: 6px;
 	text-align: center;
 }
 
 .form-group {
-	padding-top: 12px;
+	padding-top: 36px;
+}
+
+.form-control {
+	padding-bottom: 36px;
+	margin-bottom: 6px;
+}
+
+.song {
+	padding-top: 36px;
+	margin-right: 12px;
+}
+
+.jumbotron {
+	background-color: rgba(0, 0, 0, .5);
+}
+
+h2 {
+	padding-top: 36px;
 }
