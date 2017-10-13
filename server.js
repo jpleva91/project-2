@@ -1,6 +1,9 @@
 const express = require('express'),
 	app = express(),
-	bodyParser = require('body-parser');
+	bodyParser = require('body-parser'),
+	axios = require('axios'),
+	apikey = require('./env.js'),
+	ejs = require('ejs');
 
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
@@ -57,6 +60,20 @@ app.delete('/api/songs/:id', function (req, res) {
 
 	db.Song.findOneAndRemove({ _id: songId }, function(err, deletedSong) {
 		res.json(deletedSong);
+	});
+});
+
+app.get('/test', function(req, res) {
+	console.log("Test Route Hit");
+	let lyricsId = "15953433";
+	axios.get("http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=" + lyricsId + "&apikey="+ apikey)
+		.then(function (response) {
+			let data = {lyric: response.data.message.body.lyrics.lyrics_body };
+			ejs.renderFile('./views/lyrics.ejs', data, function(err, str) {
+			if (err) throw err;
+			html = str;
+			res.send(html);
+			});
 	});
 });
 

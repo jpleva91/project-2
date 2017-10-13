@@ -19,27 +19,23 @@ $('document').ready(function(){
 	// 	$('#lyrics').html(maskOffLyrics);
 	// });
 
-	 $('.joey').click(function() {
-   	$.get("https://stormy-chamber-67699.herokuapp.com/api/songs/59dff484cc8f6e0009b38ce6", function(data) {
-	 		var soundcloudId = data.soundCloudId;
-	 		console.log(soundcloudId);
-	 		$('iframe').attr('src', src + soundcloudId);
-	 	});
-	 	$.get("http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=15953433&apikey="+apikey, function(data) {
-	 		var lyrics = data.lyrics.lyrics_body;
-	 		$('#lyrics').html(lyrics);
-	 	});
-	 });
+	 // $('.joey').click(function() {
+  //  	$.get("https://stormy-chamber-67699.herokuapp.com/api/songs/59dff484cc8f6e0009b38ce6", function(data) {
+	 // 		var soundcloudId = data.soundCloudId;
+	 // 		console.log(soundcloudId);
+	 // 		$('iframe').attr('src', src + soundcloudId);
+	 // 	});
+	 // });
 
 /*
 * === LOCAL TESTING ===
 */
-	// $('.joey').click(function() {
- //  	$.get("http://localhost:3000/api/songs/59dfee777505c154a072fb8d", function(data) {
-	// 		var soundcloudId = data.soundCloudId;
-	// 		console.log(soundcloudId);
-	// 		$('iframe').attr('src', src + soundcloudId);
-	// 		$('#lyrics').html(data.lyrics);
-	// 	});
-	// });
+$('.test').click(function() {
+ 	$.get("http://localhost:3000/api/songs/59dfee777505c154a072fb8d", function(data) {
+ 		var soundcloudId = data.soundCloudId;
+ 		console.log(soundcloudId);
+ 		$('iframe').attr('src', src + soundcloudId);
+ 	});
+});
+
 });

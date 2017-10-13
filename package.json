@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/jpleva91/project-2#readme",
   "dependencies": {
+    "axios": "^0.16.2",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "lyric-get": "^1.0.3",
