@@ -24,7 +24,10 @@ $('document').ready(function(){
 	 		var soundcloudId = data.soundCloudId;
 	 		console.log(soundcloudId);
 	 		$('iframe').attr('src', src + soundcloudId);
-	 		$('#lyrics').html(data.lyrics);
+	 	});
+	 	$.get("https://lyric-api.herokuapp.com/api/find/Logic/all%20i%20do", function(data) {
+	 		var lyrics = data.lyric;
+	 		$('#lyrics').html(lyrics);
 	 	});
 	 });
 

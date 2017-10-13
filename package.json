@@ -21,6 +21,7 @@
   "dependencies": {
     "ejs": "^2.5.7",
     "express": "^4.16.2",
+    "lyric-get": "^1.0.3",
     "mongoose": "^4.12.1"
   }
 }
