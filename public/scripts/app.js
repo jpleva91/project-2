@@ -19,11 +19,24 @@ $('document').ready(function(){
 	// 	$('#lyrics').html(maskOffLyrics);
 	// });
 
-	$('.joey').click(function() {
-  	$.get("https://stormy-chamber-67699.herokuapp.com/api/songs/59dff484cc8f6e0009b38ce6", function(data) {
-			var songObject = data;
-			songObject = JSON.parse(songObject);
-			console.log(songObject);
-		});
-	});
+	 $('.joey').click(function() {
+   	$.get("https://stormy-chamber-67699.herokuapp.com/api/songs/59dff484cc8f6e0009b38ce6", function(data) {
+	 		var soundcloudId = data.soundCloudId;
+	 		console.log(soundcloudId);
+	 		$('iframe').attr('src', src + soundcloudId);
+	 		$('#lyrics').html(data.lyrics);
+	 	});
+	 });
+
+/*
+* === LOCAL TESTING ===
+*/
+	// $('.joey').click(function() {
+ //  	$.get("http://localhost:3000/api/songs/59dfee777505c154a072fb8d", function(data) {
+	// 		var soundcloudId = data.soundCloudId;
+	// 		console.log(soundcloudId);
+	// 		$('iframe').attr('src', src + soundcloudId);
+	// 		$('#lyrics').html(data.lyrics);
+	// 	});
+	// });
 });
