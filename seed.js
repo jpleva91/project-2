@@ -4,7 +4,7 @@ var songs_list = [
 	{
 	title: "Man of the Year",
 	artist: "Logic",
-	lyrics: "Test lyrics",
+	lyricsId: "15953433",
 	soundCloudId: "91168184"
 	}
 ];
@@ -31,7 +31,7 @@ db.Artist.remove({}, function(err, artists) {
 			songs_list.forEach(function (songData) {
 				var song = new db.Song({
 					title: songData.title,
-					lyrics: songData.lyrics,
+					lyricsId: songData.lyricsId,
 					soundCloudId: songData.soundCloudId
 				});
 				db.Artist.findOne({name: songData.artist}, function (err, foundArtist) {

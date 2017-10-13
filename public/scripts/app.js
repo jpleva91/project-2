@@ -25,8 +25,8 @@ $('document').ready(function(){
 	 		console.log(soundcloudId);
 	 		$('iframe').attr('src', src + soundcloudId);
 	 	});
-	 	$.get("https://lyric-api.herokuapp.com/api/find/Logic/all%20i%20do", function(data) {
-	 		var lyrics = data.lyric;
+	 	$.get("http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=15953433&apikey="+apikey, function(data) {
+	 		var lyrics = data.lyrics.lyrics_body;
 	 		$('#lyrics').html(lyrics);
 	 	});
 	 });
