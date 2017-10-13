@@ -14,8 +14,16 @@ $('document').ready(function(){
 		$('#lyrics').html(theRace);
 	});
 
+	// $('.joey').click(function() {
+	// 	$('iframe').attr('src', src + joeyMaskOff);
+	// 	$('#lyrics').html(maskOffLyrics);
+	// });
+
 	$('.joey').click(function() {
-		$('iframe').attr('src', src + joeyMaskOff);
-		$('#lyrics').html(maskOffLyrics);
+  	$.get("https://stormy-chamber-67699.herokuapp.com/api/songs/59dff484cc8f6e0009b38ce6", function(data) {
+			var songObject = data;
+			songObject = JSON.parse(songObject);
+			console.log(songObject);
+		});
 	});
 });
